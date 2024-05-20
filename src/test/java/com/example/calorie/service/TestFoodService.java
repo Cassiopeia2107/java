@@ -72,7 +72,7 @@ class TestFoodService {
   }
 
   @Test
-  public void testAddFood() {
+  void testAddFood() {
     Food food = new Food(null, "Banana", 105);
     Food savedFood = new Food(1L, "Banana", 105);
     when(foodRepositoryDao.save(food)).thenReturn(savedFood);
@@ -84,7 +84,7 @@ class TestFoodService {
   }
 
   @Test
-  public void testDeleteFood() {
+  void testDeleteFood() {
     doNothing().when(foodRepositoryDao).deleteById(1L);
 
     String result = foodService.deleteFood(1L);
