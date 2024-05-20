@@ -26,7 +26,6 @@ class CounterServiceTest {
 
     @Test
     void testIncrementRequestCount() {
-
         int initialCount = CounterService.getRequestCount();
 
         CounterService.incrementRequestCount();
@@ -55,5 +54,27 @@ class CounterServiceTest {
         service2 = CounterService.getInstance();
 
         assertEquals(service1, service2);
+    }
+
+    @Test
+    void testHashCode() {
+        CounterService service = CounterService.getInstance();
+        int hashCode = service.hashCode();
+        assertEquals(hashCode, service.hashCode());
+    }
+
+ 
+
+    @Test
+    void testGetInstanceReturnsTheSameObject() {
+        CounterService service1 = CounterService.getInstance();
+        CounterService service2 = CounterService.getInstance();
+        assertSame(service1, service2);
+    }
+
+    @Test
+    void testGetInstanceReturnsNonNullObject() {
+        CounterService service = CounterService.getInstance();
+        assertNotNull(service);
     }
 }
