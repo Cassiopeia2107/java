@@ -13,7 +13,7 @@ class CounterServiceTest {
 
         assertSame(instance1, instance2);
     }
-    
+
 
     @Test
     void testMultipleIncrementRequestCount() {
