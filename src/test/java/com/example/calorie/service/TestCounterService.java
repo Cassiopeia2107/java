@@ -7,6 +7,53 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class CounterServiceTest {
     @Test
+    void testGetInstanceReturnsSameInstance() {
+        CounterService instance1 = CounterService.getInstance();
+        CounterService instance2 = CounterService.getInstance();
+
+        assertSame(instance1, instance2);
+    }
+    
+
+    @Test
+    void testMultipleIncrementRequestCount() {
+        int initialCount = CounterService.getRequestCount();
+
+        CounterService.incrementRequestCount();
+        CounterService.incrementRequestCount();
+
+        int newCount = CounterService.getRequestCount();
+
+        assertEquals(initialCount + 2, newCount);
+    }
+
+    @Test
+    void testThreadSafety() throws InterruptedException {
+        int initialCount = CounterService.getRequestCount();
+
+        Thread thread1 = new Thread(() -> {
+            for (int i = 0; i < 1000; i++) {
+                CounterService.incrementRequestCount();
+            }
+        });
+
+        Thread thread2 = new Thread(() -> {
+            for (int i = 0; i < 1000; i++) {
+                CounterService.incrementRequestCount();
+            }
+        });
+
+        thread1.start();
+        thread2.start();
+
+        thread1.join();
+        thread2.join();
+
+        int finalCount = CounterService.getRequestCount();
+
+        assertEquals(initialCount + 2000, finalCount);
+    }
+    @Test
     void testDataAnnotation() {
         CounterService service = CounterService.getInstance();
         String toString = service.toString();
@@ -63,7 +110,7 @@ class CounterServiceTest {
         assertEquals(hashCode, service.hashCode());
     }
 
- 
+
 
     @Test
     void testGetInstanceReturnsTheSameObject() {
