@@ -1,7 +1,7 @@
 package com.example.calorie.controller;
 
 import com.example.calorie.model.User;
-import com.example.calorie.UserService;
+import com.example.calorie.service.UserService;
 import java.util.List;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;

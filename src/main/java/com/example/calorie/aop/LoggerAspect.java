@@ -1,6 +1,6 @@
 package com.example.calorie.aop;
 
-import com.example.calorie.CounterService;
+import com.example.calorie.service.CounterService;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;

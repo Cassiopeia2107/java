@@ -1,4 +1,4 @@
-package com.example.calorie.interfaces;
+package com.example.calorie.service.interfaces;
 
 import com.example.calorie.model.User;
 import io.swagger.v3.oas.annotations.Hidden;

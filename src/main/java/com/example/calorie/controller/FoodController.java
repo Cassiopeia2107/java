@@ -1,7 +1,7 @@
 package com.example.calorie.controller;
 
 import com.example.calorie.model.Food;
-import com.example.calorie.FoodService;
+import com.example.calorie.service.FoodService;
 import java.util.List;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;

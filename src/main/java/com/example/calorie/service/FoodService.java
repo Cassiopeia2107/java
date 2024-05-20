@@ -1,8 +1,8 @@
-package com.example.calorie;
+package com.example.calorie.service;
 
 import com.example.calorie.cache.LruCache;
 import com.example.calorie.dao.FoodRepositoryDao;
-import com.example.calorie.interfaces.FoodInterface;
+import com.example.calorie.service.interfaces.FoodInterface;
 import com.example.calorie.model.Food;
 import io.swagger.v3.oas.annotations.Hidden;
 import java.util.List;

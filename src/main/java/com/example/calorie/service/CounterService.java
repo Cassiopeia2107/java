@@ -1,4 +1,4 @@
-package com.example.calorie;
+package com.example.calorie.service;
 
 import java.util.concurrent.atomic.AtomicInteger;
 import lombok.Data;
