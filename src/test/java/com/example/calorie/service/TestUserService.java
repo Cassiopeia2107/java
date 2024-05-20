@@ -149,5 +149,45 @@ class UserServiceTest {
         assertTrue(result.isEmpty());
         verify(userRepositoryDao, never()).save(any(User.class));
     }
- 
+    @Test
+    void testUpdateUser_WithProducts() {
+        User existingUser = new User(1L, "John Doe");
+        Food product1 = new Food(1L, "Apple", 100);
+        Food product2 = new Food(2L, "Banana", 80);
+
+        User updatedUser = new User(1L, "John Doe");
+        updatedUser.addProduct(product1);
+        updatedUser.addProduct(product2);
+
+        when(userRepositoryDao.findById(1L)).thenReturn(Optional.of(existingUser));
+        when(userRepositoryDao.save(any(User.class))).thenAnswer(invocation -> invocation.getArgument(0));
+
+        User result = userService.updateUser(1L, updatedUser);
+
+        assertNotNull(result);
+        assertEquals(updatedUser.getName(), result.getName());
+        assertEquals(2, result.getProducts().size());
+        assertTrue(result.getProducts().contains(product1));
+        assertTrue(result.getProducts().contains(product2));
+        assertEquals(result, product1.getUser());
+        assertEquals(result, product2.getUser());
+        verify(userRepositoryDao, times(1)).save(result);
+    }
+    @Test
+    void testDeleteUser_WithProducts() {
+        User existingUser = new User(1L, "John Doe");
+        Food product1 = new Food(1L, "Apple", 100);
+        Food product2 = new Food(2L, "Banana", 80);
+        existingUser.addProduct(product1);
+        existingUser.addProduct(product2);
+
+        when(userRepositoryDao.findById(1L)).thenReturn(Optional.of(existingUser));
+
+        String result = userService.deleteUser(1L);
+
+        assertEquals("delete", result);
+        assertNull(product1.getUser());
+        assertNull(product2.getUser());
+        verify(userRepositoryDao, times(1)).delete(existingUser);
+    }
 }
