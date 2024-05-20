@@ -39,6 +39,19 @@ public class Food {
   }
 
   /**
+   * Instantiates a new Food.
+   *
+   * @param id the id
+   * @param name the name
+   * @param calories the calories
+   */
+  public Food(Long id, String name, int calories) {
+    this.id = id;
+    this.name = name;
+    this.calories = calories;
+  }
+
+  /**
    * Gets id.
    *
    * @return the id

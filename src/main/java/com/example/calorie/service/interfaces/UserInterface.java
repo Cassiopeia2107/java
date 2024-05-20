@@ -55,4 +55,12 @@ public interface UserInterface {
    * @return the all user by food
    */
   List<User> getAllUserByFood(String foodName);
+
+  /**
+   * Add users list.
+   *
+   * @param users the users
+   * @return the list
+   */
+  List<User> addUsers(List<User> users);
 }

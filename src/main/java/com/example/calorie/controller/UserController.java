@@ -40,6 +40,17 @@ public class UserController {
   }
 
   /**
+   * Add users list.
+   *
+   * @param users the users
+   * @return the list
+   */
+  @PostMapping("/add-users")
+  public List<User> addUsers(@RequestBody List<User> users) {
+    return userService.addUsers(users);
+  }
+
+  /**
    * Gets user.
    *
    * @param id the id

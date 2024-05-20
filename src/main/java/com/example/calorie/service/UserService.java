@@ -88,4 +88,10 @@ public class UserService implements UserInterface {
   public List<User> getAllUserByFood(String foodName) {
     return userRepositoryDao.findAllUserByFood(foodName);
   }
+
+  // 5 лаба bulk операция с сокращенной формой лямбда выражения
+  @Override
+  public List<User> addUsers(List<User> users) {
+    return users.stream().map(this::addUser).toList();
+  }
 }
