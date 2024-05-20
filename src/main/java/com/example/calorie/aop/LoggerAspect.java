@@ -1,5 +1,6 @@
 package com.example.calorie.aop;
 
+import com.example.calorie.CounterService;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -24,11 +25,12 @@ public class LoggerAspect {
     String methodName = joinPoint.getSignature().getName();
 
     log.info("Entering controller method: {}.{}", className, methodName);
-
     try {
+      CounterService.incrementRequestCount();
       Object result = joinPoint.proceed();
 
       log.info("Exiting controller method: {}.{}", className, methodName);
+      log.info("количество {}", CounterService.getRequestCount());
       return result;
     } catch (Exception e) {
       log.error("Exception in controller method: {}.{}", className, methodName, e);

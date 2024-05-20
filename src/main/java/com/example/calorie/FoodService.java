@@ -1,9 +1,9 @@
-package com.example.calorie.service;
+package com.example.calorie;
 
 import com.example.calorie.cache.LruCache;
 import com.example.calorie.dao.FoodRepositoryDao;
+import com.example.calorie.interfaces.FoodInterface;
 import com.example.calorie.model.Food;
-import com.example.calorie.service.interfaces.FoodInterface;
 import io.swagger.v3.oas.annotations.Hidden;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;

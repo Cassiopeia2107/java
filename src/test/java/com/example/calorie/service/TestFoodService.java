@@ -1,5 +1,6 @@
 package com.example.calorie.service;
 
+import com.example.calorie.FoodService;
 import com.example.calorie.dao.FoodRepositoryDao;
 import com.example.calorie.model.Food;
 import org.junit.jupiter.api.BeforeEach;

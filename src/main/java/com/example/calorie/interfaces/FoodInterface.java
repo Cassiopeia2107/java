@@ -1,4 +1,4 @@
-package com.example.calorie.service.interfaces;
+package com.example.calorie.interfaces;
 
 import com.example.calorie.model.Food;
 import io.swagger.v3.oas.annotations.Hidden;

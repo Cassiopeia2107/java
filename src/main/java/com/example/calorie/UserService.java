@@ -1,10 +1,10 @@
-package com.example.calorie.service;
+package com.example.calorie;
 
 import com.example.calorie.cache.LruCache;
 import com.example.calorie.dao.UserRepositoryDao;
+import com.example.calorie.interfaces.UserInterface;
 import com.example.calorie.model.Food;
 import com.example.calorie.model.User;
-import com.example.calorie.service.interfaces.UserInterface;
 import io.swagger.v3.oas.annotations.Hidden;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;

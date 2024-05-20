@@ -2,6 +2,7 @@ package com.example.calorie.service;
 
 import com.example.calorie.dao.UserRepositoryDao;
 import com.example.calorie.model.User;
+import com.example.calorie.UserService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
