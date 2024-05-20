@@ -90,7 +90,7 @@ public class UserController {
    * @return the users by id
    */
   @GetMapping("/{foodName}")
-  public List<User> getUsersById(@PathVariable String foodName) {
+  public List<User> getUsersByFood(@PathVariable String foodName) {
     return userService.getAllUserByFood(foodName);
   }
 }
