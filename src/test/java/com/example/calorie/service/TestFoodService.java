@@ -24,16 +24,16 @@ class TestFoodService {
 
   @InjectMocks private FoodService foodService;
 
-  private Food food;
+  private Food existingFood;
 
   @BeforeEach
   void setUp() {
-    food = new Food(1L, "Apple", 100);
+    existingFood = new Food(1L, "Apple", 100);
   }
 
   @Test
   void testGetAllFoods() {
-    List<Food> foods = Arrays.asList(food, new Food(2L, "Orange", 80));
+    List<Food> foods = Arrays.asList(existingFood, new Food(2L, "Orange", 80));
     when(foodRepositoryDao.findAll()).thenReturn(foods);
 
     List<Food> result = foodService.getAllFoods();
@@ -59,7 +59,7 @@ class TestFoodService {
   @Test
   void testUpdateFood() {
     Food updatedFood = new Food(1L, "Banana", 150);
-    when(foodRepositoryDao.findById(1L)).thenReturn(Optional.of(food));
+    when(foodRepositoryDao.findById(1L)).thenReturn(Optional.of(existingFood));
     when(foodRepositoryDao.save(any(Food.class)))
         .thenAnswer(invocation -> invocation.getArgument(0));
 
