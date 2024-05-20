@@ -8,8 +8,10 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -113,5 +115,37 @@ class UserServiceTest {
         assertNotNull(result);
         assertEquals(users.size(), result.size());
         verify(userRepositoryDao, times(users.size())).save(any(User.class));
+    }
+    @Test
+    void testGetUserNotFound() {
+        when(userRepositoryDao.findById(1L)).thenReturn(Optional.empty());
+
+        assertThrows(ResourceNotFoundException.class, () -> userService.getUser(1L));
+        verify(userRepositoryDao, times(1)).findById(1L);
+    }
+    @Test
+    void testUpdateUserNotFound() {
+        User updatedUser = new User(1L, "Jane Doe");
+        when(userRepositoryDao.findById(1L)).thenReturn(Optional.empty());
+
+        assertThrows(ResourceNotFoundException.class, () -> userService.updateUser(1L, updatedUser));
+        verify(userRepositoryDao, times(1)).findById(1L);
+    }
+    @Test
+    void testDeleteUserNotFound() {
+        when(userRepositoryDao.findById(1L)).thenReturn(Optional.empty());
+
+        assertThrows(ResourceNotFoundException.class, () -> userService.deleteUser(1L));
+        verify(userRepositoryDao, times(1)).findById(1L);
+    }
+    @Test
+    void testAddUsersEmptyList() {
+        List<User> users = Collections.emptyList();
+
+        List<User> result = userService.addUsers(users);
+
+        assertNotNull(result);
+        assertTrue(result.isEmpty());
+        verify(userRepositoryDao, never()).save(any(User.class));
     }
 }

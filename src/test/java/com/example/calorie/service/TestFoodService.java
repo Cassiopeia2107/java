@@ -8,13 +8,13 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
@@ -29,6 +29,23 @@ class TestFoodService {
   @BeforeEach
   void setUp() {
     existingFood = new Food(1L, "Apple", 100);
+  }
+  @Test
+  void testGetFood_ThrowsResourceNotFoundException() {
+    Long id = 999L;
+    when(foodRepositoryDao.findById(id)).thenReturn(Optional.empty());
+
+    assertThrows(ResourceNotFoundException.class, () -> foodService.getFood(id));
+    verify(foodRepositoryDao, times(1)).findById(id);
+  }
+  @Test
+  void testUpdateFood_ThrowsResourceNotFoundException() {
+    Long id = 999L;
+    Food updatedFood = new Food(id, "Banana", 150);
+    when(foodRepositoryDao.findById(id)).thenReturn(Optional.empty());
+
+    assertThrows(ResourceNotFoundException.class, () -> foodService.updateFood(id, updatedFood));
+    verify(foodRepositoryDao, times(1)).findById(id);
   }
 
   @Test
