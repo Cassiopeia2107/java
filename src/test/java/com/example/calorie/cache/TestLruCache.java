@@ -2,7 +2,6 @@ package com.example.calorie.cache;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import com.example.calorie.cache.LruCache;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
