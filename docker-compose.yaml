@@ -1,0 +1,48 @@
+services:
+  frontend:
+    container_name: calorie_front
+    restart: always
+    build:
+      context: ./calorie-ui
+      dockerfile: Dockerfile
+    ports:
+      - "4200:4200"
+    depends_on:
+      - backend
+    networks:
+      - app
+
+  backend:
+    container_name: calorie
+    restart: always
+    build:
+      context: ./calorie
+      dockerfile: Dockerfile
+    ports:
+      - "8081:8081"
+    depends_on:
+      - calorie_db
+    environment:
+      SPRING_DATASOURCE_URL: 'jdbc:postgresql://calorie_db/calorie'
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: postgres
+    networks:
+      - app
+
+  calorie_db:
+    image: postgres:latest
+    ports:
+      - "5434:5432"
+    environment:
+      POSTGRES_DB: calorie
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - ./infrastructure/db/create_db.sql:/docker-entrypoint-initdb.d/create_db.sql
+    networks:
+      - app
+
+networks:
+  app:
+    driver: bridge
+
