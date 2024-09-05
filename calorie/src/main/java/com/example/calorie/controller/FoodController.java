@@ -36,7 +36,7 @@ public class FoodController {
    * @param food the food
    * @return the food
    */
-  @PostMapping("/")
+  @PostMapping
   public Food addFood(@RequestBody Food food) {
     return foodService.addFood(food);
   }

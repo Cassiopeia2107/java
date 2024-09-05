@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class CounterServiceTest {
+class TestCounterService {
     @Test
     void testGetInstanceReturnsSameInstance() {
         CounterService instance1 = CounterService.getInstance();

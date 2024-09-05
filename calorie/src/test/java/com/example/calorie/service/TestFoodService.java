@@ -102,11 +102,13 @@ class TestFoodService {
 
   @Test
   void testDeleteFood() {
-    doNothing().when(foodRepositoryDao).deleteById(1L);
+    when(foodRepositoryDao.findById(1L)).thenReturn(Optional.of(existingFood));
+    doNothing().when(foodRepositoryDao).delete(existingFood);
 
     String result = foodService.deleteFood(1L);
 
     assertEquals("delete", result);
-    verify(foodRepositoryDao, times(1)).deleteById(1L);
+    verify(foodRepositoryDao, times(1)).findById(1L);
+    verify(foodRepositoryDao, times(1)).delete(existingFood);
   }
 }
