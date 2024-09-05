@@ -22,10 +22,8 @@ services:
       - "8081:8081"
     depends_on:
       - calorie_db
-    environment:
-      SPRING_DATASOURCE_URL: 'jdbc:postgresql://calorie_db/calorie'
-      SPRING_DATASOURCE_USERNAME: postgres
-      SPRING_DATASOURCE_PASSWORD: postgres
+    env_file:
+      - config/.env
     networks:
       - app
 
@@ -33,10 +31,8 @@ services:
     image: postgres:latest
     ports:
       - "5434:5432"
-    environment:
-      POSTGRES_DB: calorie
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
+    env_file:
+      - config/db.env
     volumes:
       - ./infrastructure/db/create_db.sql:/docker-entrypoint-initdb.d/create_db.sql
     networks:

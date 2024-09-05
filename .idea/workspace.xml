@@ -5,8 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dec4932f-238a-4b3b-be62-c8c57417a0dc" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/config/db.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/config/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/calorie.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/calorie.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/6/86399b46fed61ab51064d229430884400a0a2b8f" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/6/86399b46fed61ab51064d229430884400a0a2b8f" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/calorie-ui" beforeDir="false" afterPath="$PROJECT_DIR$/calorie-ui" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/calorie-ui/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/calorie-ui/angular.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/calorie-ui/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/calorie-ui/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/calorie-ui/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/calorie-ui/package.json" afterDir="false" />
@@ -15,38 +22,9 @@
       <change beforePath="$PROJECT_DIR$/calorie-ui/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/calorie-ui/src/app/app.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/calorie-ui/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/calorie-ui/src/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/calorie-ui/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/calorie-ui/src/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/app.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/app.log.2024-05-19.0.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/calorie/CalorieApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/calorie/aop/LoggerAspect.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/calorie/aop/PointCuts.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/calorie/cache/LruCache.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/calorie/controller/FoodController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/calorie/controller/UserController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/calorie/dao/FoodRepositoryDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/calorie/dao/UserRepositoryDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/calorie/exception/ApiError.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/calorie/exception/MyExceptionClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/calorie/model/Food.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/calorie/model/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/calorie/service/CounterService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/calorie/service/FoodService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/calorie/service/UserService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/calorie/service/interfaces/FoodInterface.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/calorie/service/interfaces/UserInterface.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/calorie/cache/TestLruCache.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/calorie/controller/FoodControllerTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/calorie/controller/UserControllerTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/calorie/model/TestFood.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/calorie/model/TestUser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/calorie/service/TestCounterService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/calorie/service/TestFoodService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/calorie/service/TestUserService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/calorie/test_exception/MyClassExceptionTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/calorie/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/calorie/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/calorie/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/calorie/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,6 +65,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.CalorieApplication.executor": "Run",
     "Docker.Dockerfile.executor": "Run",
     "Docker.docker-compose.yaml.backend: Compose Deployment.executor": "Run",
     "Docker.docker-compose.yaml.calorie_db: Compose Deployment.executor": "Run",
@@ -128,8 +107,9 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "Spring Boot.CalorieApplication.executor": "Run",
     "git-widget-placeholder": "master",
+    "jdk.selected.JAVA_MODULE": "17",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/egerin/Projects/chaihana_back",
+    "last_opened_file_path": "/home/egerin/Projects/3_sem(Java)/calorie/calorie",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -138,7 +118,7 @@
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.EditorConfig",
+    "settings.editor.selected.configurable": "web.server",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -148,6 +128,9 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/config" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.example.calorie.service" />
     </key>
@@ -274,12 +257,18 @@
       <workItem from="1716415194416" duration="17000" />
       <workItem from="1721767266509" duration="42000" />
       <workItem from="1721843609489" duration="180000" />
-      <workItem from="1725433276922" duration="979000" />
+      <workItem from="1725433276922" duration="2255000" />
+      <workItem from="1725438271144" duration="2515000" />
+      <workItem from="1725478962627" duration="1562000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/calorie$UserServiceTest.ic" NAME="UserServiceTest Coverage Results" MODIFIED="1716251146000" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
