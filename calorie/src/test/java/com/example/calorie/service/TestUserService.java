@@ -167,27 +167,7 @@ class TestUserService {
     verify(userRepositoryDao, never()).save(any(User.class));
   }
 
-  @Test
-  void testUpdateUser_ExistingProduct() {
-    user.addProduct(food);
-    Food newFood = new Food(1L, "Apple", 100);
-    User updatedUser = new User(1L, "Jane Doe");
-    updatedUser.setProducts(new HashSet<>());
-    updatedUser.addProduct(newFood);
 
-    when(userRepositoryDao.findById(1L)).thenReturn(Optional.of(user));
-    when(userRepositoryDao.save(any(User.class)))
-        .thenAnswer(invocation -> invocation.getArgument(0));
-
-    User result = userService.updateUser(1L, updatedUser);
-
-    assertNotNull(result);
-    assertEquals(updatedUser.getName(), result.getName());
-    assertEquals(1, result.getProducts().size());
-    assertTrue(result.getProducts().contains(food));
-    assertEquals(user, food.getUser());
-    verify(userRepositoryDao, times(1)).save(user);
-  }
 
   @Test
   void testAddUser_WithProducts() {

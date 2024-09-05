@@ -7,6 +7,7 @@ import com.example.calorie.model.Food;
 import com.example.calorie.model.User;
 import com.example.calorie.service.interfaces.UserInterface;
 import io.swagger.v3.oas.annotations.Hidden;
+
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.webmvc.ResourceNotFoundException;
@@ -59,22 +60,25 @@ public class UserService implements UserInterface {
 
   @Override
   public User updateUser(Long id, User newUser) {
+    cache.remove(id);
     User user = getUser(id);
+
     user.setName(newUser.getName());
+
+    if (user.getProducts() != null) {
+      for (Food product : user.getProducts()) {
+        product.setUser(null);
+      }
+
+      user.getProducts().clear();
+    }
+
     if (newUser.getProducts() != null) {
-      for (Food product : newUser.getProducts()) {
-        boolean productExists =
-            user.getProducts().stream()
-                .anyMatch(
-                    existingProduct ->
-                        existingProduct.getName().equals(product.getName())
-                            && existingProduct.getCalories() == product.getCalories());
-        if (!productExists) {
-          product.setUser(user);
-          user.addProduct(product);
-        }
+      for (Food newFood : newUser.getProducts()) {
+        user.addProduct(newFood);
       }
     }
+    cache.put(id, user);
     return userRepositoryDao.save(user);
   }
 
