@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 @Component
 @Aspect
 @Slf4j
-public class LoggerAspect {
+public class  LoggerAspect {
   /**
    * Log controller methods object.
    *
